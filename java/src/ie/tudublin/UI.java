@@ -56,11 +56,19 @@ public class UI extends PApplet
         {
             System.out.println("Left arrow key pressed");
         }
-
+        
         //Drawing Dinosaur box 
-        fill(255,0,0);
+        
+        fill(0,77,0);
         noStroke();
-        rect(70, 100, 350, 250, 20, 20, 20 ,20);
+        rect(70, 100, 350, 250, 0, 0, 50 ,50);
+        
+        for( int i = 0; i < 11; i ++) {
+            fill(255,255,0);
+            rect(70, 60, 100, 20);
+        }
+        fill(0,250,250);
+        rect(70, 80, 350, 20);
 
     }
 }
