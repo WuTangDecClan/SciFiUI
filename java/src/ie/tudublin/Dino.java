@@ -27,7 +27,7 @@ public class Dino
        ui.rect(70, 100, square, 250, 0, 0, 50 ,50);
        
        //Drawing color box above Dinosaur box.
-       for(int i = 0; i < 11; i++) {    //loop creating top bar.
+       for(int i = 0; i < 11; i++) {    //loop creating top bar. //Nothing Unwanted.
         ui.fill(randomColor);
         ui.rect(xBars, 80, colorBars, 20);
         xBars = xBars + colorBars;
