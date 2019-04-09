@@ -5,7 +5,7 @@ import processing.core.PApplet;
 public class UI extends PApplet
 {
     Button b;
-    MovingCircle mc;
+    Dna mc;
     Dino dc;
     boolean[] keys = new boolean[1024];
 
@@ -33,9 +33,9 @@ public class UI extends PApplet
     }
 
     public void setup()
-    {
+    { 
         b = new Button(this, 50, 50, 100, 50, "I am a button");
-        mc = new MovingCircle(this, width / 2, height * .75f, 50);
+        mc = new Dna(this, width - width*.20f, 5, 5);
         radar = new Radar(this, 1, width / 2, height / 2, 100);
         dc = new Dino(this);
     }

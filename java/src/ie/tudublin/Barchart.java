@@ -1,6 +1,5 @@
 package ie.tudublin;
 
-import processing.core.PApplet;
 import processing.core.PVector;
 
 public class Barchart extends UI
@@ -9,7 +8,6 @@ public class Barchart extends UI
     private PVector pos;
     private float frequency;
     private UI ui;
-    private float theta = 0;
 
     public Barchart()
     {
