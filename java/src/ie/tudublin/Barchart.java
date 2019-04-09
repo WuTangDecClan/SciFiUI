@@ -1,71 +1,50 @@
 package ie.tudublin;
 
-import processing.core.PVector;
+import processing.core.PApplet;
 
-public class Barchart extends UI
+public class Barchart
 {
+    private float x;
+    private float dy = 1;
+    private float y;
+    private float diameter;
     private float radius;
-    private PVector pos;
-    private float frequency;
-    private UI ui;
+    private float chart;
+    UI ui;
 
-    public Barchart()
+    public Barchart(UI ui, float x, float y, float diameter, float chart)
     {
-
+        this.ui = ui;
+        this.x = x;
+        this.y = y;
+        this.diameter = diameter;
+        this.chart = chart;
+        radius = diameter / 2;
     }
-
+    
     public void render()
     {
-        ellipse(ui.width/2, ui.height/2, 40, 40);
-    }
+        ui.stroke(255);
+        ui.line(diameter, y - diameter, diameter*6 - (diameter *.5f), y - diameter);
+        ui.rect(diameter, y - diameter, 30, chart);
+        /*
+        ui.stroke(255);
+        ui.noFill();
+        ui.ellipse(x, y, diameter, diameter);
+        ui.fill(255);
+        // Static field
+        ui.textAlign(PApplet.CENTER, PApplet.CENTER);
+        ui.text("I am a moving circle", x, y);
+        */
 
+    }
 
     public void update()
     {
-
+        chart += 1;
+        if ((chart > 360) || (chart < chart - diameter))
+        {
+            chart *= -1;
+        }
     }
-
-    /**
-     * @return the radius
-     */
-    public float getRadius() {
-        return radius;
-    }
-
-    /**
-     * @param radius the radius to set
-     */
-    public void setRadius(float radius) {
-        this.radius = radius;
-    }
-
-    /**
-     * @return the pos
-     */
-    public PVector getPos() {
-        return pos;
-    }
-
-    /**
-     * @param pos the pos to set
-     */
-    public void setPos(PVector pos) {
-        this.pos = pos;
-    }
-
-    /**
-     * @return the frequency
-     */
-    public float getFrequency() {
-        return frequency;
-    }
-
-    /**
-     * @param frequency the frequency to set
-     */
-    public void setFrequency(float frequency) {
-        this.frequency = frequency;
-    }
-
-    
 }

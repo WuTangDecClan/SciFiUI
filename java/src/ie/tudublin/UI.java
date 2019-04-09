@@ -7,6 +7,7 @@ public class UI extends PApplet
     Button b;
     Dna mc;
     Dino dc;
+    Barchart st;
     boolean[] keys = new boolean[1024];
     float outln;
 
@@ -39,6 +40,7 @@ public class UI extends PApplet
         mc = new Dna(this, width - width*.20f, 5, 5);
         radar = new Radar(this, 1, width / 2, height / 2, 100);
         dc = new Dino(this);
+        st = new Barchart(this, width, height, width*.1f, 0);
     }
 
     Radar radar;
@@ -54,6 +56,9 @@ public class UI extends PApplet
 
         dc.update();
         dc.render();
+
+        st.render();
+        st.update();
 
         if (checkKey(LEFT))
         {

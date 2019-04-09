@@ -14,10 +14,14 @@ public class Dino
 
     public void render()
     {
-        gap = ui.width * .1f;
-        
+       gap = ui.width * .1f;
+       
+       //Outline for big box.
+       ui.rect( gap*.5f, gap*.5f, gap*5.5f, ui.height - (ui.height/8) );
        //Drawing Dinosaur box.
-       ui.fill(0,222,0);
+       ui.stroke(127, 127, 127);
+       ui.strokeWeight(3);
+       ui.fill(0);
        ui.rect(gap - (gap*.3f), gap, ui.width/2f, ui.height/3, 0, 0, 50 ,50);
        
     }
