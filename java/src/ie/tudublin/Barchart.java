@@ -20,7 +20,7 @@ public class Barchart
         this.diameter = diameter;
         this.chart = chart;
         radius = diameter / 2;
-    }
+    }   //new Barchart(this, width, height, width*.1f, 0);
     
     public void render()
     {
@@ -42,7 +42,7 @@ public class Barchart
     public void update()
     {
         chart += 1;
-        if ((chart > 360) || (chart < chart - diameter))
+        if ((chart > y - diameter) || (chart < chart - diameter))
         {
             chart *= -1;
         }
