@@ -8,6 +8,7 @@ public class UI extends PApplet
     Dna mc;
     Dino dc;
     boolean[] keys = new boolean[1024];
+    float outln;
 
     public void keyPressed()
     {
@@ -27,7 +28,7 @@ public class UI extends PApplet
 
     public void settings()
     {
-        size(800, 800);
+        size(800, 600);
         // Use fullscreen instead of size to make your interface fullscreen
         //fullScreen(P3D); 
     }
@@ -44,14 +45,12 @@ public class UI extends PApplet
 
     public void draw()
     {
-        background(0);
+        background(165, 165, 165);
+        backdrop();
         b.render();
 
         mc.update();
         mc.render();
-
-        radar.update();
-        radar.render();
 
         dc.update();
         dc.render();
@@ -61,6 +60,21 @@ public class UI extends PApplet
             System.out.println("Left arrow key pressed");
         }
 
+    }
+    public void backdrop() {
+        outln = 10;
+        stroke(127, 127, 127);
+        strokeWeight(3);
+        //This is drawing the outer lines of the UI.
+        line(outln, outln, width - outln, outln);
+        line(outln, outln, outln, height - outln);
+        line(outln, height - outln, width - outln, height - outln);
+        line(width - outln, height - outln, width - outln, outln);
+
+        line( (outln * 2), outln, (outln * 2), height - (outln * 2) );
+        line( (outln * 2), height - (outln * 2), width * .8f, height - (outln * 2) ); 
+        line( width * .8f, height - (outln * 2), width * .8f + outln, height - (outln * 5) );
+        line( width * .8f + outln, height - (outln * 5), width - outln  ,height - (outln * 5) );
     }
 }
 
