@@ -40,7 +40,7 @@ public class UI extends PApplet
         mc = new Dna(this, width - width*.20f, 5, 5);
         radar = new Radar(this, 1, width / 2, height / 2, 100);
         dc = new Dino(this);
-        st = new Barchart(this, width, height, width*.1f, 0);
+        st = new Barchart(this, width/2, height, width*.1f, 0);
     }
 
     Radar radar;
