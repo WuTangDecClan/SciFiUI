@@ -24,6 +24,8 @@ public class Dino
        ui.fill(0);
        ui.rect(gap - (gap*.3f), gap, ui.width/2f, ui.height/3, 0, 0, 50 ,50);
        
+       //Drawing caution circle.
+       ui.ellipse(ui.width - gap, ui.height - gap/3, 25, 25);
     }
 
     public void update()

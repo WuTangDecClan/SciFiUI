@@ -26,7 +26,7 @@ public class Barchart
         ui.line(diameter, y - diameter, diameter*6 - (diameter *.7f), y - diameter);
         
         for (int i = 0; i < 9; i ++ ) {
-            ui.fill(ui.map(i, 0, 9, 0, 255), 255, 255);
+            ui.fill(ui.map(i, 0, 9, 0, 255), ui.map(i, 0, 9, 0, 255), 255);
             ui.rect(diameter + radius * i, y - diameter, 30, chart - i * 8);
             
         }
