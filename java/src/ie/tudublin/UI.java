@@ -4,7 +4,6 @@ import processing.core.PApplet;
 
 public class UI extends PApplet
 {
-    Button b;
     Dna mc;
     Dino dc;
     Barchart st;
@@ -36,20 +35,16 @@ public class UI extends PApplet
 
     public void setup()
     { 
-        b = new Button(this, 50, 50, 100, 50, "I am a button");
         mc = new Dna(this, width - width*.20f, 5, 5);
-        radar = new Radar(this, 1, width / 2, height / 2, 100);
         dc = new Dino(this);
         st = new Barchart(this, width/2, height, width*.1f, 0);
     }
 
-    Radar radar;
 
     public void draw()
     {
         background(165, 165, 165);
         backdrop();
-        b.render();
 
         mc.update();
         mc.render();
@@ -67,6 +62,7 @@ public class UI extends PApplet
 
     }
     public void backdrop() {
+        
         outln = 10;
         stroke(127, 127, 127);
         strokeWeight(3);
