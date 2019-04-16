@@ -24,9 +24,8 @@ public class Barchart
     {
         ui.stroke(255);
         ui.line(diameter, y - diameter, diameter*6 - (diameter *.7f), y - diameter);
-        
         for (int i = 0; i < 9; i ++ ) {
-            ui.fill(ui.map(i, 0, 9, 0, 255), ui.map(i, 0, 9, 0, 255), 255);
+            ui.fill(ui.map(i, 0, 9, 0, 255), 255, 255);
             ui.rect(diameter + radius * i, y - diameter, 30, chart - i * 8);
             
         }
@@ -35,7 +34,7 @@ public class Barchart
     public void update()
     {
         chart = chart + dy;
-        if ((chart == -100) || chart == 1) {
+        if ((chart == -60) || chart == 1) {
             dy = dy * -1;
         }
     }

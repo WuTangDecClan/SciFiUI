@@ -15,7 +15,7 @@ public class Dino
     public void render()
     {
        gap = ui.width * .1f;
-       
+       ui.fill(0, 255, 255);
        //Outline for big box.
        ui.rect( gap*.5f, gap*.5f, gap*5.5f, ui.height - (ui.height/8) );
        //Drawing Dinosaur box.

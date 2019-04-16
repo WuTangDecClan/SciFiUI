@@ -36,7 +36,7 @@ public class UI extends PApplet
     public void setup()
     { 
         colorMode(HSB);
-        mc = new Dna(this, width - width*.20f, 5, 5);
+        mc = new Dna(this, height, width*.1f, width/2);
         dc = new Dino(this);
         st = new Barchart(this, height, width*.1f, 0);
     }
@@ -47,11 +47,11 @@ public class UI extends PApplet
         background(165, 165, 165);
         backdrop();
 
-        mc.update();
-        mc.render();
-
         dc.update();
         dc.render();
+
+        mc.update();
+        mc.render();
 
         st.render();
         st.update();
