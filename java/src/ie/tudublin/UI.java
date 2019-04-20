@@ -4,67 +4,48 @@ import processing.core.PApplet;
 
 public class UI extends PApplet
 {
-    Dna mc;
-    Dino dc;
-    Barchart st;
-    boolean[] keys = new boolean[1024];
-    float outln;
-
-    public void keyPressed()
-    {
-        keys[keyCode] = true;
-    }
+    Button b;
+    MovingCircle mc; 
+    Radar radar;
+    MovingBar bars;
+    Window view;
     
-    public void keyReleased()
-    {
-        keys[keyCode] = false;
+    float outln = 10;
+
+    public void settings() {
+        size(600, 600);
     }
 
-    public boolean checkKey(int c)
-    {
-        return keys[c] || keys [Character.toUpperCase(c)];
-    }
-    
-
-    public void settings()
-    {
-        size(800, 600);
-        // Use fullscreen instead of size to make your interface fullscreen
-        //fullScreen(P3D); 
-    }
-
-    public void setup()
-    { 
+    public void setup() {
         colorMode(HSB);
-        mc = new Dna(this, height, width*.1f, width/2);
-        dc = new Dino(this);
-        st = new Barchart(this, height, width*.1f, 0);
+        b = new Button(this, 50, 50, 100, 50, "I am a button");
+        mc = new MovingCircle(this, width / 2, height * .75f, 50);
+        radar = new Radar(this, 1, width - 60 , height - 30, 10);
+        bars = new MovingBar(this, (outln * 4), height - (outln * 2), (height/4f) * -1, width * .8f);
+        view = new Window(this, width * .1f, width);
     }
 
-
-    public void draw()
-    {
-        background(165, 165, 165);
+    public void draw() {
+        background(0,0,165);
         backdrop();
-
-        dc.update();
-        dc.render();
+        
+        b.render();
 
         mc.update();
         mc.render();
 
-        st.render();
-        st.update();
+        radar.update();
+        radar.render();
 
-        if (checkKey(LEFT))
-        {
-            System.out.println("Left arrow key pressed");
-        }
+        bars.update();
+        bars.render();
 
+        view.update();
+        view.render();
     }
+
     public void backdrop() {
         
-        outln = 10;
         stroke(127, 127, 127);
         strokeWeight(3);
         //This is drawing the outer lines of the UI.
