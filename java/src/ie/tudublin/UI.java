@@ -18,21 +18,22 @@ public class UI extends PApplet
 
     public void setup() {
         colorMode(HSB);
-        b = new Button(this, 50, 50, 100, 50, "I am a button");
-        mc = new MovingCircle(this, width / 2, height * .75f, 50);
+        //b = new Button(this, 50, 50, 100, 50, "I am a button");
+        //mc = new MovingCircle(this, width / 2, height * .75f, 50);
         radar = new Radar(this, 1, width - 60 , height - 30, 10);
         bars = new MovingBar(this, (outln * 4), height - (outln * 2), (height/4f) * -1, width * .8f);
         view = new Window(this, width * .1f, width);
+        
     }
 
     public void draw() {
         background(0,0,165);
         backdrop();
         
-        b.render();
+        //b.render();
 
-        mc.update();
-        mc.render();
+        //mc.update();
+        //mc.render();
 
         radar.update();
         radar.render();
@@ -42,6 +43,7 @@ public class UI extends PApplet
 
         view.update();
         view.render();
+
     }
 
     public void backdrop() {
@@ -59,5 +61,8 @@ public class UI extends PApplet
         line( width * .8f, height - (outln * 2), width * .8f + outln, height - (outln * 5) );
         line( width * .8f + outln, height - (outln * 5), width - outln  ,height - (outln * 5) );
     }
+
+	public void reset() {
+	}
 }
 

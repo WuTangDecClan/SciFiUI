@@ -31,7 +31,7 @@ public class Window
 
     public void render()
     {
-       //Outline for big box.
+       //Outline for colour box.
        red = ui.map(ui.mouseX, 0, ui.width, 0, 255);
        blue = ui.map(ui.mouseX, 0, ui.width, 255, 0);
        ui.fill(blue,red,red);
@@ -39,6 +39,8 @@ public class Window
        //Drawing Dinosaur box.
        ui.stroke(127, 127, 127);
        ui.strokeWeight(3);
+       ui.fill(blue,red,red);
+       ui.rect(gap - (gap*.3f), gap, ui.width - gap * 2, ui.height - 350);
        ui.fill(0);
        ui.rect(gap - (gap*.3f), gap, ui.width - gap * 2, ui.height - 350, 80, 80, 80 ,80);
        
