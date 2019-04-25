@@ -14,6 +14,23 @@ public class UI extends PApplet
     //Declaring variables.
     float outln = 10;
 
+    boolean[] keys = new boolean[1024];
+
+    public void keyPressed()
+    {
+        keys[keyCode] = true;
+    }
+    
+    public void keyReleased()
+    {
+        keys[keyCode] = false;
+    }
+
+    public boolean checkKey(int c)
+    {
+        return keys[c] || keys [Character.toUpperCase(c)];
+    }
+
     public void settings() {
         size(600, 600);
     }
@@ -24,6 +41,7 @@ public class UI extends PApplet
         radar = new Radar(this, 1, width - 60 , height - 30, 10);
         bars = new MovingBar(this, (outln * 4), height - (outln * 2), (height/4f) * -1, width * .8f);
         view = new Window(this, width * .1f, width);
+        b = new Button(this, 50, 50, 100, 50, "Nigga");
         
     }
 
@@ -41,8 +59,13 @@ public class UI extends PApplet
         view.update();
         view.render();
 
-    }
+        b.render();
 
+    }
+    
+    public void mousePressed() {
+        b.base();
+    }
     //backdrop() method.
     public void backdrop() {
         

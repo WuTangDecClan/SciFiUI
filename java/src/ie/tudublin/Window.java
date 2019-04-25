@@ -1,22 +1,33 @@
 package ie.tudublin;
 
-import processing.core.PApplet;
-
 public class Window
 {
     UI ui;
     private float gap;
     private float xZ;
-    private float xR = gap*.5f;
+    private float xR = gap * .5f;
 
     private static float red;
     private static float blue;
 
-    public Window(UI ui, float gap, float xZ)
-    {
+    public Window(UI ui, float gap, float xZ) {
         this.ui = ui;
         this.gap = gap;
         this.xZ = xZ;
+    }
+
+    /**
+     * @return the xR
+     */
+    public float getxR() {
+        return xR;
+    }
+
+    /**
+     * @param xR the xR to set
+     */
+    public void setxR(float xR) {
+        this.xR = xR;
     }
 
     public void render()
