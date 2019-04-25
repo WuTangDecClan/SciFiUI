@@ -10,7 +10,7 @@ public class UI extends PApplet
     Radar radar;
     MovingBar bars;
     Window view;
-    
+    Art[] arts = new Art[400];    
     //Declaring variables.
     float outln = 10;
 
@@ -42,7 +42,10 @@ public class UI extends PApplet
         bars = new MovingBar(this, (outln * 4), height - (outln * 2), (height/4f) * -1, width * .8f);
         view = new Window(this, width * .1f, width);
         b = new Button(this, 50, 50, 100, 50, "Nigga");
-        
+        translate(width/2, height/2);
+        for( int i = 0; i < arts.length; i++) {
+            arts[i] = new Art(this);  
+        }
     }
 
     public void draw() {
@@ -59,12 +62,16 @@ public class UI extends PApplet
         view.update();
         view.render();
 
-        b.render();
+        for( int i = 0; i < arts.length; i++) {
+            arts[i].render();
+            arts[i].update();
+            arts[i].show();  
+        }
 
     }
     
     public void mousePressed() {
-        b.base();
+
     }
     //backdrop() method.
     public void backdrop() {

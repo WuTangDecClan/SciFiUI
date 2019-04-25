@@ -54,7 +54,7 @@ public class Window
     }
 
     public void bigBox() {
-        
+    
         //Drawing Big box & outer box.
        ui.stroke(127, 127, 127);
        ui.strokeWeight(3);
@@ -62,6 +62,5 @@ public class Window
        ui.rect(gap - (gap*.3f), gap, ui.width - gap * 2, ui.height - 350);
        ui.fill(0);
        ui.rect(gap - (gap*.3f), gap, ui.width - gap * 2, ui.height - 350, 80, 80, 80 ,80);
-    
     }
 }

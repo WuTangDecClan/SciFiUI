@@ -32,11 +32,4 @@ public class Button
         ui.ellipse(200, 340, 40, 40);
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
     }
-    public void base() {
-        ui.noFill();
-        ui.stroke(255);
-        ui.ellipse(400, 340, 40, 40);
-        ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-    }
-
 }
