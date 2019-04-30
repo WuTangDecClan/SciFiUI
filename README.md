@@ -12,7 +12,7 @@ Welcome to.... SPACE! It's only you and your assistant, the Funky Space Monkey.
 
 This assignment takes the traditional Alien UI and adds a colourful mix of animation and interactivity using Processing.
 
-[![YouTube](Monkey.jpg)](https://youtu.be/42hfwCpjhIg)
+[![YouTube](Capture.jpg)](https://youtu.be/42hfwCpjhIg)
 
 # Instructions
 
