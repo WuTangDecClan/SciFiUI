@@ -1,84 +1,96 @@
 # SciFi UI Project
 
-Name:
+Name: Declan Thorne
 
-Student Number: 
+Student Number: C17425952
 
 Fork this repository and use it a starter project for your assignment
 
 # Description of the assignment
 
+Welcome to.... SPACE! It's only you and your assistant, the Funky Space Monkey. 
+
+This assignment takes the traditional Alien UI and adds a colourful mix of animation and interactivity using Processing.
+
+[![YouTube](http://i3.ytimg.com/vi/42hfwCpjhIg/maxresdefault.jpg)](https://youtu.be/42hfwCpjhIg)
+
 # Instructions
+
+So there is a lot going on. It's a Science Fiction UI system. There is the bars at the bottom. They let you know everything is in shape and the ship is running at max capacity.
+
+The Black Screen in the center shows the ship we are on. And to see our destination press and hold the 'w' key. 
+
+To see out the ship as we are travelling click the mouse. to go back, click the mouse again. 
+
+Drag the mouse across and up the screen in any direction or pattern, the colours noticeably change to where the user is pointing.
 
 # How it works
 
-# What I am most proud of in the assignment
+Using Processing the project is split up into different classes that have their methods render and update called 60 times a second.
 
-# Markdown Tutorial
+Looking out the window of the space ship and seeing the multicoloured stars coming towards you, this is achieved using an array of 400. The stars reset once they have left the screen and they grow in size while they move towards us.
 
-This is *emphasis*
+The colour bars' colours are assigned to the X axis of the mouse and the Y axis of the mouse. 
 
-This is a bulleted list
-
-- Item
-- Item
-
-This is a numbered list
-
-1. Item
-1. Item
-
-This is a [hyperlink](http://bryanduggan.org)
-
-# Headings
-## Headings
-#### Headings
-##### Headings
+The bars in the barchart are put into an ArrayList and have their values randomly generated, these values are also stored in another ArrayList and are called using loops. 
 
 This is code:
 
 ```Java
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
+public class MovingBar {
+
+    private float zY;
+    private float zX;
+    private float ranY;
+    private float heightY;
+    private float radius;
+
+    ArrayList<Float> size = new ArrayList<Float>(7);
+    ArrayList<Integer> dy = new ArrayList<Integer>(7);
+    UI ui;
+    
+    // new MovingBar(this, (outln * 2), height - (outln * 2));
+    public MovingBar(UI ui, float zX, float zY, float heightY, float radius) {
+        this.ui = ui;
+        this.zX = zX;
+        this.zY = zY;
+        this.heightY = heightY;
+        this. radius = radius /8;
+        for(int i = 0; i < 7; i++){
+            ranY = ui.random((ui.height/4) * -1, 0);
+            size.add(ranY);
+            dy.add(-1);
+        }
+    }   
+    
+    public void render() {
+        
+        ui.stroke(127, 127, 127);
+        ui.fill(255, 255, 255);
+        for(int i = 0; i < 7; i++) {
+            ui.fill(ui.map(i, 0, 7, 0, 255), 255, 255);
+            ui.rect(zX + (radius * i), zY, 50, size.get(i));
+        }
+    }
+
+    public void update() {
+        for(int i = 0; i < 7; i ++) {
+            size.set(i, size.get(i) + dy.get(i));
+        }
+        for(int i = 0; i < 7; i ++) {
+            if ((size.get(i) >= heightY) && (size.get(i) <= (heightY + 5)) || (size.get(i) >= 1)) {
+                dy.set(i, dy.get(i) * -1);
+            }
+        }
+    }
 }
-```
-
-So is this without specifying the language:
 
 ```
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
 
-This is an image using a relative URL:
+# What I am most proud of in the assignment
 
-![An image](images/p8.png)
+I struggled with Processing in general and I'm glad I started this project early and kept coming back to it. Im proud of the colours I used and the overall creativity of the project along with the use of classes and focusing on *OOP techniques*. 
 
-This is an image using an absolute URL:
 
-![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
 
-This is a youtube video:
-
-[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
-
-This is a table:
-
-| Heading 1 | Heading 2 |
-|-----------|-----------|
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
 
