@@ -4,16 +4,18 @@ Name: Declan Thorne
 
 Student Number: C17425952
 
-![An image](images/one.JPG)
+![An image](images/three.JPG)
 # Description of the assignment
 
 Welcome to.... SPACE! It's only you and your assistant, the Funky Space Monkey. 
 
 This assignment takes the traditional Alien UI and adds a colourful mix of animation and interactivity using Processing.
 
-[![YouTube](images/Capture.jpg)](https://youtu.be/42hfwCpjhIg)
+[![YouTube](images/capture.jpg)](https://youtu.be/42hfwCpjhIg)
 
 # Instructions
+
+![An image](images/one.JPG)
 
 So there is a lot going on. It's a Science Fiction UI system. There is the bars at the bottom. They let you know everything is in shape and the ship is running at max capacity.
 
