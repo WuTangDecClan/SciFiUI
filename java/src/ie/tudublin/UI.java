@@ -1,6 +1,7 @@
 package ie.tudublin;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class UI extends PApplet
 {
@@ -15,6 +16,8 @@ public class UI extends PApplet
     float outln = 10;
     int counter = 2;
     int backdropp = 165;
+    PImage webImg;
+    PImage webImg2;
 
     boolean[] keys = new boolean[1024];
 
@@ -39,6 +42,8 @@ public class UI extends PApplet
 
     public void setup() {
         colorMode(HSB);  //Changing colour mode.
+        String url = "https://images.8tracks.com/cover/i/002/627/970/28879272-5934.jpg?rect=0,0,422,422&q=98&fm=jpg&fit=max";
+        webImg = loadImage(url, "jpg");
         //Creating instances of the classes.
         if ( counter % 2 == 0) {
             radar = new Radar(this, 1, width - 60 , height - 30, 10);
@@ -57,14 +62,18 @@ public class UI extends PApplet
         if ( counter % 2 == 0) {
             backdrop(); //Calling backdrop() method.
             //calling object methods.
+               
             radar.update();
             radar.render();
 
             bars.update();
             bars.render();
-
+            
             view.update();
             view.render();
+            rect(width - 122, height-163, 103, 103);
+            image(webImg,width - 120,height - 160, 100, 100);
+            
         }
         
         if ( counter % 2 != 0 ) {
@@ -75,7 +84,6 @@ public class UI extends PApplet
                 stars[i].show();  
             }
         }
-
     }
     
     public void mousePressed() {
