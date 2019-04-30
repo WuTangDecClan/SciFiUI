@@ -4,15 +4,14 @@ Name: Declan Thorne
 
 Student Number: C17425952
 
-Fork this repository and use it a starter project for your assignment
-
+![An image](images/one.JPG)
 # Description of the assignment
 
 Welcome to.... SPACE! It's only you and your assistant, the Funky Space Monkey. 
 
 This assignment takes the traditional Alien UI and adds a colourful mix of animation and interactivity using Processing.
 
-[![YouTube](Capture.jpg)](https://youtu.be/42hfwCpjhIg)
+[![YouTube](images/Capture.jpg)](https://youtu.be/42hfwCpjhIg)
 
 # Instructions
 
@@ -24,6 +23,8 @@ To see out the ship as we are travelling click the mouse. to go back, click the 
 
 Drag the mouse across and up the screen in any direction or pattern, the colours noticeably change to where the user is pointing.
 
+![An image](images/two.JPG)
+
 # How it works
 
 Using Processing the project is split up into different classes that have their methods render and update called 60 times a second.
@@ -33,6 +34,8 @@ Looking out the window of the space ship and seeing the multicoloured stars comi
 The colour bars' colours are assigned to the X axis of the mouse and the Y axis of the mouse. 
 
 The bars in the barchart are put into an ArrayList and have their values randomly generated, these values are also stored in another ArrayList and are called using loops. 
+
+![An image](images/nebula.jpg)
 
 This is code:
 
@@ -91,6 +94,6 @@ public class MovingBar {
 
 I struggled with Processing in general and I'm glad I started this project early and kept coming back to it. Im proud of the colours I used and the overall creativity of the project along with the use of classes and focusing on *OOP techniques*. 
 
-
+![An image](images/monkey.jpg)
 
 
